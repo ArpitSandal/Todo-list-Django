@@ -1,0 +1,76 @@
+{% extends 'home.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/all.css' %}">
+<link rel="stylesheet" href="{% static 'mycss/home.css' %}">
+
+{% block title_block %}
+
+<div class="my-name">
+    <h2>Hello, {{ request.user }}</h2>
+</div>
+
+
+<div class="incomplete-task-up">
+    <div class="incomplete-task">
+        {% if counter > 0 %}
+        <p>You have {{ counter }} <span style="color: #FFBD44;">Incompleted</span> Tasks :(</p>
+        {% else %}
+        <p>You are all <span style="color: #51f200;">caught</span> up :)</p>
+        {% endif %}
+
+    </div>
+</div>
+{% if check %}
+<div class="uppertaskarea">
+    <div class="taskarea">
+        {% for i in object %}
+
+        {% if i.completed %}
+        <div class="tasks completed">
+            <p>{{ i.title }}</p>
+            <div class="task-update-delete">
+                <div class="update">
+                    <a href="{% url 'task' i.id %}">
+                        <i class="fas fa-pen-square"></i>
+                    </a>
+                </div>
+                <div class="delete">
+                    <a href="{% url 'delete' i.id %}">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="tasks">
+            <p>{{ i.title }}</p>
+            <div class="task-update-delete">
+
+                <div class="update">
+                    <a href="{% url 'task' i.id %}">
+                        <i class="fas fa-pen-square"></i>
+                    </a>
+                </div>
+                <div class="delete">
+                    <a href="{% url 'delete' i.id %}">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {% endif %}
+
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="whenempty">
+    <h3>Add some new Tasks Here</h3>
+</div>
+{% endif %}
+<div class="new-task-button">
+    <a href="{% url 'new-task' %}">Add Task</a>
+</div>
+
+{% endblock title_block %}

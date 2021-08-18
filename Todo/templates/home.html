@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'mycss/home.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="{% static 'icons/favicon.ico' %}">
+    <title>Toodle Do</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Task Area -->
+        <div class="sider">
+            <div class="dots">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+                <div class="dot3"></div>
+            </div>
+            {% block title_block %}
+            {% endblock title_block %}
+            
+            <div class="prev-task">
+            {% block task_create %}
+            {% endblock task_create %}
+            </div>
+
+            <div class="new-task">
+            {% block new_task %}
+            {% endblock new_task %}
+            </div>
+
+            <div class="delete-confirm">
+                
+                {% block delete_confirm %}
+                {% endblock delete_confirm %}
+                    
+            </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+
+{% block new_task %}
+    <form action="" method="POST">{% csrf_token %}
+
+        {% for i in forms %}
+            <div class="label-block"><h2>{{ i.label }}</h2></div>
+            <div class="upperarea{{ forloop.counter }}"><div class="area{{ forloop.counter }}">{{ i }}</div></div>
+        {% endfor %}
+            
+        <div class="svblock"><div class="sv"><input type="submit" value="Save" name="pk"></div></div>
+    </form>
+
+{% endblock new_task %}
+    
