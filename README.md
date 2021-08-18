@@ -19,7 +19,7 @@ Some Samples :rocket:
 
 # Installation
 
-1. Clone the respository: ``` git clone https://github.com/ArpitSandal/Django-Todo.git ```
+1. Clone the respository: ``` git clone https://github.com/ArpitSandal/Todo-list-Django.git```
 
 2. Install django and make sure you have python installed: ``` pip install django ```
 
