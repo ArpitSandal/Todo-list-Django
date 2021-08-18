@@ -5,8 +5,8 @@ This responsive Todo webapp is created using Django framework.
 It is a simple Todo list app, which keeps track of all the Tasks.
 
 It's UI is inspired by the modern **Glassmorphism Design** which
-is a minimalistic semi-transparent design which uses the **backdrop-filter property**
-to obtain the glassy design.
+is a minimalistic semi-transparent design that uses the **backdrop-filter property**
+to obtain the glassy interface.
 
 Some Samples :rocket:
 
