@@ -12,7 +12,11 @@ body{
     display: flex;
     align-items: center;
     background: rgb(68,105,247);
-    background: linear-gradient(238deg, rgba(68,105,247,1) 0%, rgba(246,91,245,1) 100%);
+    background-image: linear-gradient(238deg, rgba(68,105,247,1) 0%, rgba(246,91,245,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 h1{
